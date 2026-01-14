@@ -1,6 +1,10 @@
 # derevative_experement
 
+f'(x) = (f(x+▲x) - f(x))/▲x
+for explonentials
+f'(x) = (f(x)*f(▲x) -f(x))/▲x
 
+▲x == 1e - 6 not infinitysmal  ... coz...:)
 
 Why I made it
 
