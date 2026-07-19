@@ -1,26 +1,42 @@
-# derevative_experement
+# Derivative Experiment
 
-f'(x) = (f(x+▲x) - f(x))/▲x
-for explonentials
-f'(x) = (f(x)*f(▲x) -f(x))/▲x
+A small experiment that approximates derivatives using finite differences.
 
-▲x == 1e - 6 not infinitysmal  ... coz...:)
+## Method
 
-Why I made it
+For most functions:
 
-Honestly, this started as curiosity. I wanted to feel what it’s like to “teach Python calculus” directly and see what happens when I make mistakes, debug them, and iterate.
+```text
+f'(x) ≈ (f(x + Δx) - f(x)) / Δx
+```
 
-Even if the code isn’t mathematically perfect or robust for all edge cases, it helped me understand derivatives, exponentials, and logarithms in a way that watching tutorials never did.
+For exponential expressions (e.g. `2**x`), I experimented with:
 
-How to use
+```text
+f'(x) ≈ (f(x) · f(Δx) - f(x)) / Δx
+```
 
-Import or run derivative() in your Python environment
+where
 
-Provide a function as a string (e.g., "x**2-2*x")
+```text
+Δx = 1e-6
+```
 
-Call the function with a number for x
+Not infinitesimal... Python politely refused to store one.
 
-Experiment with h to see the effect of step size
+## Purpose
 
-example :
-derivative(2, operation="x**2-2*x")
+The goal of this project is to better understand numerical differentiation by implementing it from scratch rather than relying on existing libraries. It is an experiment for learning, not a complete symbolic differentiation engine.
+
+## Usage
+
+```python
+derivative(2, operation="x**2 - 2*x")
+```
+
+You can also try:
+
+```python
+derivative(3, operation="x**3")
+derivative(1, operation="2**x")
+```
